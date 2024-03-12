@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    form{margin:auto}
+    .input-container{
+        display:block !important;
+    }
+    .input-container input{
+        width: 500px;
+    }
+</style>
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="input-container">
+            <label for="Username" class="form-label">Username</label>
+            <input class="form-control" name="username" type="username" placeholder="John">
+        </div>
+        <br>
+        <div class="input-container">
+            <label for="password" class="form-label">Password</label>
+            <input class="form-control" name="password" type="password" id="password" placeholder="Password">
+        </div>
+        <br>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock content %}
